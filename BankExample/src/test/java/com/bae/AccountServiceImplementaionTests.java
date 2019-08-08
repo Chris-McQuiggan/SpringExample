@@ -17,6 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jms.core.JmsTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
@@ -38,6 +39,8 @@ public class AccountServiceImplementaionTests {
 	@Mock
 	RestTemplate restTemplate;
 	
+	@Mock
+	JmsTemplate jmsTemplate;
 
 	@Test
 	public void contextLoads() {
@@ -70,7 +73,6 @@ public class AccountServiceImplementaionTests {
 		Mockito.verify(accountRepo).save(Constant.MOCK_ACCOUNT_1);
 	}
 	
-	@Ignore
 	@Test
 	public void createAccountRequestTest() {
 		ResponseEntity<String> accNumber = new ResponseEntity<String>("B1234567890", HttpStatus.OK);
