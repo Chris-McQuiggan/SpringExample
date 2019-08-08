@@ -18,7 +18,7 @@ class CreateAccount extends Component {
             lastName: e.target[1].value,
         }
 
-        axios.post('http://localhost:8080/createAccount', body)
+        axios.post('/bank-app/createAccount', body)
             .then(() => {
                 this.setState({
                     status: "Account Created"
