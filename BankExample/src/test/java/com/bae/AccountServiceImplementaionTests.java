@@ -70,6 +70,7 @@ public class AccountServiceImplementaionTests {
 		Mockito.verify(accountRepo).save(Constant.MOCK_ACCOUNT_1);
 	}
 	
+	@Ignore
 	@Test
 	public void createAccountRequestTest() {
 		ResponseEntity<String> accNumber = new ResponseEntity<String>("B1234567890", HttpStatus.OK);
